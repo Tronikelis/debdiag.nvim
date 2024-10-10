@@ -1,6 +1,6 @@
 local M = {}
 
----@param callback fun
+---@param callback fun()
 ---@param ms integer
 function M.setTimeout(callback, ms)
     callback = vim.schedule_wrap(callback)
@@ -24,16 +24,14 @@ function M.debounce(callback, ms)
     return function(...)
         local args = { ... }
 
-        local cb = function()
-            callback(unpack(args))
-        end
-
         if timer then
             pcall(timer.stop, timer)
             pcall(timer.close, timer)
         end
 
-        timer = M.setTimeout(cb, ms)
+        timer = M.setTimeout(function()
+            callback(unpack(args))
+        end, ms)
     end
 end
 
