@@ -1,6 +1,6 @@
 # cleardig.nvim
 
-Debounced diagnostics in insert mode
+🏖️ Remove some clutter from your life
 
 ## Philosophy
 
