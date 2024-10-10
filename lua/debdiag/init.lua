@@ -1,4 +1,4 @@
-local utils = require("cleardig.utils")
+local utils = require("debdiag.utils")
 
 local M = {
     config = {

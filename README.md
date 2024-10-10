@@ -1,6 +1,5 @@
-# cleardig.nvim
-
-🏖️ Remove some clutter from your life
+# debdiag.nvim
+Simple plugin for debounced insert mode diagnostics to remove some clutter from your life
 
 ## Philosophy
 
@@ -22,7 +21,7 @@ https://github.com/user-attachments/assets/894742e1-2626-466e-aa92-4e1c3dd067a7
 ## Config
 
 ```lua
-require("cleardig").setup({
+require("debdiag").setup({
     --- the command which will disable and enable the diagnostics after debounce
     autocmd = "TextChangedI",
     --- enable diagnostics after leaving insert mode
