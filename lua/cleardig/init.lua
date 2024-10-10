@@ -1,9 +1,12 @@
-local utils = require("utils")
+local utils = require("cleardig.utils")
 
 local M = {
     config = {
+        --- the command which will disable and enable the diagnostics after debounce
         autocmd = "TextChangedI",
+        --- enable diagnostics after leaving insert mode
         enable_leave_insert = true,
+        --- debounce timer
         ms = 1000,
     },
 }
