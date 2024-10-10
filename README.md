@@ -28,7 +28,7 @@ require("cleardig").setup({
     --- enable diagnostics after leaving insert mode
     enable_leave_insert = true,
     --- debounce timer
-    ms = 1000,
+    ms = 600,
 })
 ```
 
