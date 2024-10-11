@@ -16,7 +16,9 @@ function M.setup(config)
     M.config = vim.tbl_deep_extend("force", M.config, config)
 
     local diagnostics_show = utils.debounce(function(buf)
-        vim.diagnostic.enable(true, { bufnr = buf })
+        if vim.api.nvim_buf_is_valid(buf) then
+            vim.diagnostic.enable(true, { bufnr = buf })
+        end
     end, M.config.ms)
 
     vim.api.nvim_create_autocmd(M.config.autocmd, {
