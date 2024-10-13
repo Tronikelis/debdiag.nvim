@@ -22,11 +22,11 @@ function M.setup(config)
     end, M.config.ms)
 
     vim.api.nvim_create_autocmd(M.config.autocmd, {
-        callback = function()
+        callback = vim.schedule_wrap(function()
             local buf = vim.api.nvim_get_current_buf()
             vim.diagnostic.enable(false, { bufnr = buf })
             diagnostics_show(buf)
-        end,
+        end),
     })
 
     if M.config.enable_leave_insert then
